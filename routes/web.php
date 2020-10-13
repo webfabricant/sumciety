@@ -23,3 +23,8 @@ Route::get('admin/dashboard', [
     'uses' => 'Admin\dashboardController@index',
     'as' => 'admin.dashbord'
 ]);
+
+Route::get('/dashboard', [
+    'uses' => 'Artist\dashboardController@index',
+    'as' => 'dashbord'
+]);
