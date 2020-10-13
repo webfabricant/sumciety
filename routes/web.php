@@ -24,6 +24,10 @@ Route::get('admin/dashboard', [
     'as' => 'admin.dashbord'
 ]);
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/dashboard', [
     'uses' => 'Artist\dashboardController@index',
     'as' => 'dashbord'
