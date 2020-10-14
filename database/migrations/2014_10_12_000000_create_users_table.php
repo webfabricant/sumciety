@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration
             $table->longtext('about')->nullable();
             $table->string('gender')->nullable();
             $table->string('otp')->nullable();
+            $table->string('org')->nullable();
             $table->integer('account_status')->default('0');
             $table->string('rate_perhour')->nullable();
             $table->timestamp('expire_at')->nullable();
