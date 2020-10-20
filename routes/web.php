@@ -32,3 +32,8 @@ Route::get('artist/dashboard', [
     'uses' => 'Artist\Dashboardcontroller@index',
     'as' => 'dashboard'
 ]);
+
+Route::get('/Category',[
+    'uses' => 'Admin\ProductController@category',
+    'as' => 'category',
+]);
