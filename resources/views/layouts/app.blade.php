@@ -35,8 +35,7 @@
 
 
 <!-- Begin page -->
-<div class="accountbg" style="background: url('https://images.unsplash.com/photo-1541079033018-63489731598f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');background-size: cover;"></div>
-<div class="wrapper-page account-page-full">
+
 
     @yield('content')
 

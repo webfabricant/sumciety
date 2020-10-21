@@ -16,6 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+Route::get('/dashboard', [
+    'uses' => 'Artist\Dashboardcontroller@index',
+    'as' => 'dashboard'
+]);
+
+/*---------------------------------------------------------------------------------------------------------------------*/
 
 // Admin Dashboard Routes
 
@@ -24,16 +32,18 @@ Route::get('admin/dashboard', [
     'as' => 'admin.dashbord'
 ]);
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('artist/dashboard', [
-    'uses' => 'Artist\Dashboardcontroller@index',
-    'as' => 'dashboard'
-]);
-
 Route::get('/Category',[
     'uses' => 'Admin\ProductController@category',
     'as' => 'category',
 ]);
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::namespace('Admin')->prefix('admin')->as('admin.')->group(function() {
+   Auth::routes(['register' => false]);
+   Route::get('/home', 'HomeController@index')->name('home');
+});

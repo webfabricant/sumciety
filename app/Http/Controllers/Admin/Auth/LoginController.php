@@ -1,12 +1,9 @@
 <?php
-
-namespace App\Http\Controllers\Auth;
-
+namespace App\Http\Controllers\Admin\Auth;
+ 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request;
-
+ 
 class LoginController extends Controller
 {
     /*
@@ -19,36 +16,37 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
+ 
     use AuthenticatesUsers;
-
+ 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
+    protected $redirectTo = '/admin/dashboard';
+ 
     /**
      * Create a new controller instance.
      *
-     * @return \Illuminate\Http\RedirectResponse
-     *
-     *
+     * @return void
      */
-
-    // protected function authenticated(Request $request, $user)
-    // {
-    //     if ( ! $user->role == 1  )
-    //     {
-    //         return redirect()->route('dashboard');
-    //     }
-
-    //     return redirect('/home');
-    // }
-
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest:admin')->except('logout');
     }
+    protected function guard()
+    {
+        return \Auth::guard('admin');
+    }
+    /**
+     * Show the application's login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showLoginForm()
+    {
+        return view('admin.pages.login');
+    }
+ 
 }
