@@ -87,7 +87,7 @@
                 {
                     if(response)
                     {
-                        // $("#studentTable tbody").prepend('<tr><td>'+response.firstname+'</td><td>'+response.lastname+'</td><td>'+response.email+'</td><td>'+response.phone+'</td></tr>');
+                        $("#studentTable tbody").prepend('<tr><td>'+response.firstname+'</td><td>'+response.lastname+'</td><td>'+response.email+'</td><td>'+response.phone+'</td></tr>');
                         $("#studentForm")[0].reset();
                         $("#studentadd").modal('hide');
                     }

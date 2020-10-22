@@ -27,9 +27,15 @@
             <li class="has_sub">
                 <a href="javascript:void(0);" class="waves-effect"><i class="ion-ios7-folder-outline"></i><span> Category <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                 <ul class="list-unstyled">
-                    <li><a href="{{route('category')}}">All Categories</a></li>
+                    <li><a href="{{route('category.index')}}">All Categories</a></li>
                     <li><a href="email-read.html">Email Read</a></li>
                     <li><a href="email-compose.html">Email Compose</a></li>
+                </ul>
+            </li>
+            <li class="has_sub">
+                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-clipboard-outline"></i><span> Blog Posts <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></span></a>
+                <ul class="list-unstyled">
+                    <li><a href="{{route('blog.index')}}">All Posts</a></li>
                 </ul>
             </li>
 
@@ -71,20 +77,7 @@
                 </ul>
             </li>
 
-            <li class="has_sub">
-                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-clipboard-outline"></i><span> Forms <span class="badge badge-pill badge-success pull-right">9</span> </span></a>
-                <ul class="list-unstyled">
-                    <li><a href="form-elements.html">Form Elements</a></li>
-                    <li><a href="form-validation.html">Form Validation</a></li>
-                    <li><a href="form-advanced.html">Form Advanced</a></li>
-                    <li><a href="form-wizard.html">Form Wizard</a></li>
-                    <li><a href="form-editors.html">Form Editors</a></li>
-                    <li><a href="form-uploads.html">Form File Upload</a></li>
-                    <li><a href="form-mask.html">Form Mask</a></li>
-                    <li><a href="form-summernote.html">Summernote</a></li>
-                    <li><a href="form-xeditable.html">Form Xeditable</a></li>
-                </ul>
-            </li>
+
 
             <li class="has_sub">
                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-chart-line"></i><span> Charts <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>

@@ -13,15 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Frontend\FrontendController@index')->name('index');
 /*---------------------------------------------------------------------------------------------------------------------*/
 
 Route::get('/dashboard', [
     'uses' => 'Artist\Dashboardcontroller@index',
     'as' => 'dashboard'
 ]);
+
+Route::resource('category', 'Admin\CategoryController');
+Route::resource('blog', 'Artist\BlogController');
 
 /*---------------------------------------------------------------------------------------------------------------------*/
 
@@ -32,10 +33,7 @@ Route::get('admin/dashboard', [
     'as' => 'admin.dashbord'
 ]);
 
-Route::get('/Category',[
-    'uses' => 'Admin\ProductController@category',
-    'as' => 'category',
-]);
+
 
 /*-------------------------------------------------------------------------------------------------------------------*/
 
