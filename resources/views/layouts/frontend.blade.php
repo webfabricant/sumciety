@@ -35,6 +35,7 @@
                     <li class="active">
                         <a href="index.html" class="iq-waves-effect"><i class="las la-newspaper"></i><span>Newsfeed</span></a>
                     </li>
+                    @auth
                     <li>
                         <a href="profile.html" class="iq-waves-effect"><i class="las la-user"></i><span>Profile</span></a>
                     </li>
@@ -183,7 +184,7 @@
                             </li>
                         </ul>
                     </li>
-
+@endauth
                 </ul>
             </nav>
             <div class="p-3"></div>
@@ -213,6 +214,11 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"  aria-label="Toggle navigation">
                     <i class="ri-menu-3-line"></i>
                 </button>
+                @guest
+                    <a class="bg-primary iq-sign-btn" href="{{'login'}}" role="button"  >My Account<i class="ri-login ml-2"></i>
+                    </a>
+                @endguest
+                @auth
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-list">
                         <li>
@@ -517,11 +523,13 @@
                         </li>
                     </ul>
                 </div>
+                    @endauth
             </nav>
         </div>
     </div>
     <!-- TOP Nav Bar END -->
     <!-- Right Sidebar Panel Start-->
+    @auth
     <div class="right-sidebar-mini right-sidebar">
         <div class="right-sidebar-panel p-0">
             <div class="iq-card shadow-none">
@@ -575,7 +583,7 @@
         </div>
     </div>
     <!-- Right Sidebar Panel End
-
+@endauth
     @yield('content')
 
 
