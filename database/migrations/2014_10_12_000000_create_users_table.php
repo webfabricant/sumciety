@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
             $table->string('email')->unique();
-            $table->string('role');
+            $table->string('role')->comment('1 => User, 2 => Artist, 3 => Organization');
             $table->string('profile_image')->nullable();
             $table->string('phone');
             $table->string('dob')->nullable();

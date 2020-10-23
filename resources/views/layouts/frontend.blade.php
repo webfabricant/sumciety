@@ -642,6 +642,7 @@
     <script src="{{asset('frontend/js/chart-custom.js')}}"></script>
     <!-- Custom JavaScript -->
     <script src="{{asset('frontend/js/custom.js')}}"></script>
+
 </body>
 
 <!-- Mirrored from iqonic.design/themes/socialv/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Oct 2020 08:38:05 GMT -->

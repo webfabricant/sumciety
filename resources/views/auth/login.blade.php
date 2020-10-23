@@ -2,78 +2,98 @@
 
 @section('content')
 
-<div class="accountbg" style="background: url('https://images.unsplash.com/photo-1541079033018-63489731598f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');background-size: cover;"></div>
-<div class="wrapper-page account-page-full">
-    <div class="card">
-        <div class="card-body">
-
-            <h3 class="text-center m-0">
-                <a href="index.html" class="logo logo-admin"><img src="{{asset('/backend/assets/images/logo.png')}}" height="30" alt="logo"></a>
-            </h3>
-
-            <div class="p-3">
-                <h4 class="font-18 m-b-5 text-center">Welcome Back !</h4>
-                <p class="text-muted text-center">Sign in to continue to Admiria.</p>
-
-                <form class="form-horizontal m-t-30" method="POST" action="{{ route('login') }}">
-                    @csrf
-                    <div class="form-group">
-                        <label for="username">Email</label>
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required placeholder="Enter Email">
-                        @error('email')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label for="userpassword">Password</label>
-                        <input  id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required placeholder="Enter password">
-
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group row m-t-20">
-                        <div class="col-sm-6">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input"  name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                <label class="custom-control-label" for="customControlInline">Remember me</label>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 text-right">
-                            <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Log In</button>
-                        </div>
-                    </div>
-
-                    <div class="form-group m-t-10 mb-0 row">
-                        <div class="col-12 m-t-20">
-
-                            @if (Route::has('password.request'))
-                                <a class="text-muted" href="{{ route('password.request') }}"><i class="mdi mdi-lock"></i>
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            @endif
-                        </div>
-                    </div>
-                </form>
-            </div>
-
+    <!-- loader Start -->
+    <div id="loading">
+        <div id="loading-center">
         </div>
     </div>
+    <!-- loader END -->
+    <!-- Sign in Start -->
+    <section class="sign-in-page">
+        <div id="container-inside">
+            <div id="circle-small"></div>
+            <div id="circle-medium"></div>
+            <div id="circle-large"></div>
+            <div id="circle-xlarge"></div>
+            <div id="circle-xxlarge"></div>
+        </div>
+        <div class="container p-0">
+            <div class="row no-gutters">
+                <div class="col-md-6 text-center pt-5">
+                    <div class="sign-in-detail text-white">
+                        <a class="sign-in-logo mb-5" href="#"><img src="{{asset('frontend/images/logo-full.png')}}" class="img-fluid" alt="logo"></a>
+                        <div class="owl-carousel" data-autoplay="true" data-loop="true" data-nav="false" data-dots="true" data-items="1" data-items-laptop="1" data-items-tab="1" data-items-mobile="1" data-items-mobile-sm="1" data-margin="0">
+                            <div class="item">
+                                <img src="{{asset('frontend/images/login/1.png')}}" class="img-fluid mb-4" alt="logo">
+                                <h4 class="mb-1 text-white">Find new friends</h4>
+                                <p>It is a long established fact that a reader will be distracted by the readable content.</p>
+                            </div>
+                            <div class="item">
+                                <img src="{{asset('frontend/images/login/2.png')}}" class="img-fluid mb-4" alt="logo">
+                                <h4 class="mb-1 text-white">Connect with the world</h4>
+                                <p>It is a long established fact that a reader will be distracted by the readable content.</p>
+                            </div>
+                            <div class="item">
+                                <img src="{{asset('frontend/images/login/3.png')}}" class="img-fluid mb-4" alt="logo">
+                                <h4 class="mb-1 text-white">Create new events</h4>
+                                <p>It is a long established fact that a reader will be distracted by the readable content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 bg-white pt-5">
+                    <div class="sign-in-from" style="margin-top: 18%">
+                        <h1 class="mb-0">Sign in</h1>
+                        <p>Enter your email address and password to access admin panel.</p>
+                        <form class="mt-4" method="POST" action="{{ route('login') }}">
+                            @csrf
+                            <div class="form-group">
+                                <label for="username">Email</label>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required placeholder="Enter Email">
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+{{--                                <label for="exampleInputPassword1">Password</label>--}}
 
-    <div class="m-t-40 text-center">
-        <p class="">Don't have an account ? <a href="{{ route('register') }}" class="font-500 font-14 font-secondary"> Register </a> </p>
-        <p class="">© 2017 - 2019 Admiria. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
-    </div>
+                                @if (Route::has('password.request'))
+                                    <a class="float-right" href="{{ route('password.request') }}"><i class="mdi mdi-lock"></i>
+                                        {{ __('Forgot Password?') }}
+                                    </a>
+                                @endif
+                                <label for="userpassword">Password</label>
+                                <input  id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required placeholder="Enter password">
 
-
-
-</div>
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="d-inline-block w-100">
+                                <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
+                                    <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label" for="customCheck1">Remember Me</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary float-right">Sign in</button>
+                            </div>
+                            <div class="sign-info">
+                                <span class="dark-color d-inline-block line-height-2">Don't have an account? <a href="#">Sign up</a></span>
+                                <ul class="iq-social-media">
+                                    <li><a href="#"><i class="ri-facebook-box-line"></i></a></li>
+                                    <li><a href="#"><i class="ri-twitter-line"></i></a></li>
+                                    <li><a href="#"><i class="ri-instagram-line"></i></a></li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 @endsection
