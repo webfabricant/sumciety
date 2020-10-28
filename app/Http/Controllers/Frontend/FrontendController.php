@@ -16,4 +16,9 @@ class FrontendController extends Controller
         $blogData = Blog::latest()->get();
         return view('frontend.index', compact('blogData'));
     }
+
+    public function profile()
+    {
+        return view('frontend.artist.profile');
+    }
 }
