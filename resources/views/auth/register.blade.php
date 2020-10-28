@@ -49,7 +49,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="sel1">Who are you?:</label>
-                                <select name="role" class="form-control" id="selectForm">
+                                <select name="role" class="form-control" id="selectForm" required>
                                     <option value="">-------Select--------</option>
                                     <option value="1">Traditional User</option>
                                     <option value="2">Artist</option>

@@ -650,7 +650,31 @@
     <script src="{{asset('frontend/js/chart-custom.js')}}"></script>
     <!-- Custom JavaScript -->
     <script src="{{asset('frontend/js/custom.js')}}"></script>
+   {{-- <script>
+        $(".like-Unlike").click(function() {
+            var id = document.getElementById("id").value;
+            document.getElementById("like").innerHTML == "";
+            alert('done');
+            if (document.getElementById("like").innerHTML === "") {
+            alert('yes');
+                $(this).html('Unlike');
+            }
+            else {
+                $(this).html('Like');
+            }
+            return false;
 
+
+            if ($(this).html() == "Like") {
+
+                $(this).html('Unlike');
+            }
+            else {
+                $(this).html('Like');
+            }
+            return false;
+        });
+    </script>--}}
 </body>
 
 <!-- Mirrored from iqonic.design/themes/socialv/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Oct 2020 08:38:05 GMT -->

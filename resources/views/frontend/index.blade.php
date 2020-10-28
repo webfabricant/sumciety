@@ -58,7 +58,10 @@
                                             <div class="d-flex align-items-center">
                                                 <div class="like-data">
                                                     <div class="dropdown">
-                                                        <a class="ml-2 mr-2" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Like"><img src="{{asset('frontend/images/icon/01.png')}}" class="img-fluid" alt=""></a>
+                                                        <div id="like" style="display: block">
+                                                            <a onclick="like()" class="ml-2 mr-2 like-Unlike" data-toggle="tooltip" data-placement="top" data-original-title="Like"><img src="{{asset('frontend/images/icon/02.png')}}" class="img-fluid" alt=""></a>
+                                                            <a onclick="dislike()" class="ml-2 mr-2" data-toggle="tooltip" data-placement="top" data-original-title="Like"><img src="{{asset('frontend/images/icon/01.png')}}" class="img-fluid" alt=""></a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="total-like-block ml-2 mr-3">
@@ -246,4 +249,5 @@
             </div>
         </div>
     </div>
+
 @endsection
