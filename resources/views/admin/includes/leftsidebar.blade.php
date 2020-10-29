@@ -25,11 +25,11 @@
             </li>
 
             <li class="has_sub">
-                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-email-outline"></i><span> Email <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                <a href="javascript:void(0);" class="waves-effect"><i class="ion-ios7-people"></i><span> Users <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                 <ul class="list-unstyled">
-                    <li><a href="email-inbox.html">Inbox</a></li>
-                    <li><a href="email-read.html">Email Read</a></li>
-                    <li><a href="email-compose.html">Email Compose</a></li>
+                    <li><a href="{{route('admin.orgnization')}}">Orgnization</a></li>
+                    <li><a href="email-read.html">Artist</a></li>
+                    <li><a href="email-compose.html">Traditional User</a></li>
                 </ul>
             </li>
 
