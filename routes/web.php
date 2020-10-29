@@ -13,8 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'Frontend\FrontendController@index')->name('index');
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+ // Frontend Routes
+
+Route::get('/', [
+    'uses' => 'Frontend\FrontendController@index',
+    'as' => 'index'
+]);
+
+Route::group(['middleware' => ['auth']] , function(){
+
+Route::get('/profile', [
+    'uses' => 'Frontend\FrontendController@profile',
+    'as' => 'user.profile'
+]);
+
+});
 /*---------------------------------------------------------------------------------------------------------------------*/
+
+// Artist Dashboard Routes
 
 Route::get('/dashboard', [
     'uses' => 'Artist\Dashboardcontroller@index',
@@ -62,10 +80,7 @@ Route::get('/users/artist/profile', [
 
 Route::post('/user/artist/profile-update/{id}', 'Admin\UserController@update')->name('profile.update');
 
-    Route::get('/artist/profile', [
-        'uses' => 'Frontend\FrontendController@profile',
-        'as' => 'artist.profile'
-    ]);
+
 
 });
 

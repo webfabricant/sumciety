@@ -33,11 +33,11 @@
             <nav class="iq-sidebar-menu">
                 <ul id="iq-sidebar-toggle" class="iq-menu">
                     <li class="active">
-                        <a href="index.html" class="iq-waves-effect"><i class="las la-newspaper"></i><span>Newsfeed</span></a>
+                        <a href="{{route('user.profile')}}" class="iq-waves-effect"><i class="las la-newspaper"></i><span>Newsfeed</span></a>
                     </li>
                     @auth
                     <li>
-                        <a href="profile.html" class="iq-waves-effect"><i class="las la-user"></i><span>Profile</span></a>
+                        <a href="{{route('user.profile')}}" class="iq-waves-effect"><i class="las la-user"></i><span>Profile</span></a>
                     </li>
                     <li>
                         <a href="friend-list.html" class="iq-waves-effect"><i class="las la-user-friends"></i><span>Friend Lists</span></a>
@@ -582,7 +582,7 @@
             </div>
         </div>
     </div>
-    <!-- Right Sidebar Panel End
+    <!-- Right Sidebar Panel End-->
 @endauth
     @yield('content')
 
