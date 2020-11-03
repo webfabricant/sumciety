@@ -20,7 +20,7 @@
                                     <img src="{{asset('frontend/images/user/11.png')}}" alt="profile-img" class="avatar-130 img-fluid" />
                                 </div>
                                 <div class="profile-detail">
-                                    <h3 class="">Bni Cyst</h3>
+                                    <h3 class="">{{$users->firstname}} {{$users->lastname}}</h3>
                                 </div>
                             </div>
                             <div class="profile-info p-4 d-flex align-items-center justify-content-between position-relative">
@@ -572,19 +572,19 @@
                                                         <h6>Email</h6>
                                                     </div>
                                                     <div class="col-9">
-                                                        <p class="mb-0"><a href="https://iqonic.design/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4604282f2c292e2806212b272f2a6825292b">[email&#160;protected]</a></p>
+                                                        <p class="mb-0"><a href="https://iqonic.design/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4604282f2c292e2806212b272f2a6825292b">{{$users->email}}</a></p>
                                                     </div>
                                                     <div class="col-3">
                                                         <h6>Mobile</h6>
                                                     </div>
                                                     <div class="col-9">
-                                                        <p class="mb-0">(001) 4544 565 456</p>
+                                                        <p class="mb-0">{{$users->phone}}}</p>
                                                     </div>
                                                     <div class="col-3">
                                                         <h6>Address</h6>
                                                     </div>
                                                     <div class="col-9">
-                                                        <p class="mb-0">United States of America</p>
+                                                        <p class="mb-0">{{$users->address}}</p>
                                                     </div>
                                                 </div>
                                                 <h4 class="mt-3">Websites and Social Links</h4>
@@ -594,13 +594,13 @@
                                                         <h6>Website</h6>
                                                     </div>
                                                     <div class="col-9">
-                                                        <p class="mb-0">www.bootstrap.com</p>
+                                                        <p class="mb-0">{{$users->link}}</p>
                                                     </div>
                                                     <div class="col-3">
                                                         <h6>Social Link</h6>
                                                     </div>
                                                     <div class="col-9">
-                                                        <p class="mb-0">www.bootstrap.com</p>
+                                                        <p class="mb-0">{{$users->link}}</p>
                                                     </div>
                                                 </div>
                                                 <h4 class="mt-3">Basic Information</h4>
@@ -610,32 +610,15 @@
                                                         <h6>Birth Date</h6>
                                                     </div>
                                                     <div class="col-9">
-                                                        <p class="mb-0">24 January</p>
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <h6>Birth Year</h6>
-                                                    </div>
-                                                    <div class="col-9">
-                                                        <p class="mb-0">1994</p>
+                                                        <p class="mb-0">{{$users->dob}}</p>
                                                     </div>
                                                     <div class="col-3">
                                                         <h6>Gender</h6>
                                                     </div>
                                                     <div class="col-9">
-                                                        <p class="mb-0">Female</p>
+                                                        <p class="mb-0">{{$users->gender}}</p>
                                                     </div>
-                                                    <div class="col-3">
-                                                        <h6>interested in</h6>
-                                                    </div>
-                                                    <div class="col-9">
-                                                        <p class="mb-0">Designing</p>
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <h6>language</h6>
-                                                    </div>
-                                                    <div class="col-9">
-                                                        <p class="mb-0">English, French</p>
-                                                    </div>
+                                                   
                                                 </div>
                                             </div>
                                             <div class="tab-pane fade" id="family" role="tabpanel">
@@ -775,7 +758,7 @@
                                             </div>
                                             <div class="tab-pane fade" id="details" role="tabpanel">
                                                 <h4 class="mb-3">About You</h4>
-                                                <p>Hi, I’m Bni, I’m 26 and I work as a Web Designer for the iqonicdesign.</p>
+                                                <p>{{$users->about}}</p>
                                                 <h4 class="mt-3 mb-3">Other Name</h4>
                                                 <p>Bini Rock</p>
                                                 <h4 class="mt-3 mb-3">Favorite Quotes</h4>
