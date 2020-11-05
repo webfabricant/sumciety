@@ -70,7 +70,9 @@ class ChildcategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $subcategory = Subcategory::all();
+        $childcategory = Childcategory::find($id);
+        return view('artist.pages.childcategory.edit', compact('childcategory', 'subcategory'));
     }
 
     /**
@@ -82,7 +84,17 @@ class ChildcategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Childcategory::find($id);
+        $category->name = $request->name;
+        $category->subcategory_id = $request->subcategory_id;
+
+        $category->update();
+        $notification = array(
+            'message' => 'Category Updated Successfully!',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('subcategory.index')->with($notification);
     }
 
     /**

@@ -30,9 +30,6 @@
                                             <button type="submit" class="btn btn-pink waves-effect waves-light m-r-5">
                                                 Submit
                                             </button>
-                                            <button type="reset" class="btn btn-secondary waves-effect">
-                                                Cancel
-                                            </button>
                                         </div>
                                     </div>
                                 </form>
