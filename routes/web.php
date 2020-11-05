@@ -40,7 +40,10 @@ Route::get('/dashboard', [
 ]);
 
 Route::resource('category', 'Admin\CategoryController');
+Route::resource('subcategory', 'Admin\SubcategoryController');
+Route::resource('childcategory', 'Admin\ChildcategoryController');
 Route::resource('blog', 'Artist\BlogController');
+Route::resource('product', 'Artist\ProductsController');
 
 /*---------------------------------------------------------------------------------------------------------------------*/
 
@@ -97,7 +100,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::namespace('Admin')->prefix('admin')->as('admin.')->group(function() {
    Auth::routes(['register' => false]);
-   Route::get('/home', 'HomeController@index')->name('home');
+//   Route::get('/home', 'HomeController@index')->name('home');
 });
 
 /*-------------------------------------------------------------------------------------------------------------------*/

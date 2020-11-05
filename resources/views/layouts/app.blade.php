@@ -23,6 +23,11 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
 </head>
+<style>
+    .sign-in-logo img {
+        height: 220px;
+    }
+</style>
 <body>
 
 <!-- Begin page -->

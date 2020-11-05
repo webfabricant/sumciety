@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="shortcut icon" href="{{asset('frontend/images/main/logo.png')}}" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
     <!-- Typography CSS -->
@@ -196,8 +196,8 @@
             <nav class="navbar navbar-expand-lg navbar-light p-0">
                 <div class="iq-navbar-logo d-flex justify-content-between">
                     <a href="index.html">
-                        <img src="images/logo.png" class="img-fluid" alt="">
-                        <span>SocialV</span>
+                        <img src="images/main/logo-full.png" class="img-fluid" alt="">
+                        <span>Sumciety</span>
                     </a>
                     <div class="iq-menu-bt align-self-center">
                         <div class="wrapper-menu">

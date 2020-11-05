@@ -27,9 +27,9 @@
             <li class="has_sub">
                 <a href="javascript:void(0);" class="waves-effect"><i class="ion-ios7-folder-outline"></i><span> Category <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                 <ul class="list-unstyled">
-                    <li><a href="{{route('category.index')}}">All Categories</a></li>
-                    <li><a href="email-read.html">Email Read</a></li>
-                    <li><a href="email-compose.html">Email Compose</a></li>
+                    <li><a href="{{route('category.index')}}">Main Category</a></li>
+                    <li><a href="{{route('subcategory.index')}}">Sub Category</a></li>
+                    <li><a href="{{route('childcategory.index')}}">Child Category</a></li>
                 </ul>
             </li>
             <li class="has_sub">

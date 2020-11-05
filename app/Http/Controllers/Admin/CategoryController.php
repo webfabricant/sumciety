@@ -16,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::all();
+        $category = Category::latest()->get();
         return view('artist.pages.category.categories', compact('category'));
 
     }
@@ -28,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('artist.pages.category.create');
     }
 
     /**
@@ -52,7 +52,12 @@ class CategoryController extends Controller
 
         }
         $category->save();
-        return response()->json($category);
+        $notification = array(
+            'message' => 'Category Added Successfully!',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('category.index')->with($notification);
     }
 
     /**
@@ -74,7 +79,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('artist.pages.category.edit', compact('category'));
     }
 
     /**
@@ -86,7 +92,26 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+        $category->name = $request->name;
+
+        if($request->hasfile('image'))
+        {
+            $image = $request->file('image');
+            $name = time().'blog'.'.'.$image->getClientOriginalExtension();
+            $destinationPath ='images/';
+            $image->move($destinationPath, $name);
+            $category->image = 'images/'.$name;
+
+        }
+        $category->update();
+        $notification = array(
+            'message' => 'Category Updated Successfully!',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('category.index')->with($notification);
+
     }
 
     /**
@@ -95,8 +120,22 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        $category->dalete();
+        $notification = array(
+            'message' => 'Category Deleted Successfully!',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('category.index')->with($notification);
+       /* $category = Category::find($id);
+        $category->delete();
+        $notification = array(
+            'message' => 'Category Deleted Successfully!',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('category.index')->with($notification);*/
     }
 }
