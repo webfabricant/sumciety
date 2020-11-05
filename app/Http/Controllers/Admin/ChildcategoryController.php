@@ -17,7 +17,7 @@ class ChildcategoryController extends Controller
     public function index()
     {
         $childcategory = Childcategory::latest()->get();
-        return view('artist.pages.childcategory.index', compact('childcategory'));
+        return view('admin.pages.childcategory.index', compact('childcategory'));
     }
 
     /**
@@ -28,7 +28,7 @@ class ChildcategoryController extends Controller
     public function create()
     {
         $childcategory = Subcategory::all();
-        return view('artist.pages.childcategory.create', compact('childcategory'));
+        return view('admin.pages.childcategory.create', compact('childcategory'));
     }
 
     /**
@@ -72,7 +72,7 @@ class ChildcategoryController extends Controller
     {
         $subcategory = Subcategory::all();
         $childcategory = Childcategory::find($id);
-        return view('artist.pages.childcategory.edit', compact('childcategory', 'subcategory'));
+        return view('admin.pages.childcategory.edit', compact('childcategory', 'subcategory'));
     }
 
     /**

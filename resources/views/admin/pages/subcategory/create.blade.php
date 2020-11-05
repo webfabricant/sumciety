@@ -1,4 +1,4 @@
-@extends('artist.index')
+@extends('admin.index')
 @section('content')
 
     <div class="container-fluid">
@@ -8,21 +8,21 @@
             <div class="col-lg-6">
                 <div class="card m-b-20">
                     <div class="card-body">
-                        <h4 class="mt-0 header-title">Add New Child Category</h4>
+                        <h4 class="mt-0 header-title">Add New Sub category</h4>
                         <br>
-                        <form method="post" class="" action="{{route('childcategory.store')}}" enctype="multipart/form-data">
+                        <form method="post" class="" action="{{route('subcategory.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label>Sub Category *</label>
-                                <select class="browser-default custom-select" name="subcategory_id">
-                                    <option selected>Select Sub Category</option>
-                                    @foreach($childcategory as $data)
-                                        <option value="{{$data->id}}">{{$data->name}}</option>
+                                <label>Main Category *</label>
+                                 <select class="browser-default custom-select" name="category_id">
+                                    <option selected>Select Category</option>
+                                    @foreach($categories as $data)
+                                    <option value="{{$data->id}}">{{$data->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Child Category Name *</label>
+                                <label>Sub Category Name *</label>
                                 <input type="text" class="form-control" name="name" required placeholder="Enter Sub Category Name"/>
                             </div>
                             <br>

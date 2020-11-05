@@ -9,17 +9,21 @@
     <meta content="Admin Dashboard" name="description" />
     <meta content="Themesbrand" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
     <!-- App Icons -->
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
 
     <!-- C3 charts css -->
     <link href="{{ asset('backend/plugins/c3/c3.min.css') }}" rel="stylesheet" type="text/css" />
 
+    <link href="{{asset('backend/plugins/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('backend/plugins/datatables/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- Responsive datatable examples -->
+    <link href="{{asset('backend/plugins/datatables/responsive.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- Basic Css files -->
     <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('backend/assets/css/icons.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('backend/assets/css/style.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 
 </head>
 
@@ -76,7 +80,6 @@
 </div>
 <!-- END wrapper -->
 
-
 <!-- jQuery  -->
 <script src="{{ asset('backend/assets/js/jquery.min.js') }}"></script>
 <script src="{{ asset('backend/assets/js/bootstrap.bundle.min.js') }}"></script>
@@ -96,8 +99,30 @@
 <!-- KNOB JS -->
 <script src="{{ asset('backend/plugins/jquery-knob/excanvas.js') }}"></script>
 <script src="{{ asset('backend/plugins/jquery-knob/jquery.knob.js') }}"></script>
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- Page specific js -->
+<script>
+    @if(Session::has('message'))
+    var type = "{{ Session::get('alert-type', 'info') }}";
+    switch(type){
+        case 'info':
+            toastr.info("{{ Session::get('message') }}");
+            break;
+
+        case 'warning':
+            toastr.warning("{{ Session::get('message') }}");
+            break;
+
+        case 'success':
+            toastr.success("{{ Session::get('message') }}");
+            break;
+
+        case 'error':
+            toastr.error("{{ Session::get('message') }}");
+            break;
+    }
+    @endif
+</script>
 <script src="{{ asset('backend/assets/pages/dashboard.js') }}"></script>
 
 
@@ -124,6 +149,7 @@
 <!-- App js -->
 <script src="{{ asset('backend/assets/js/app.js') }}"></script>
 <script src="{{ asset('backend/assets/js/custom.js') }}"></script>
+
 
 </body>
 </html>

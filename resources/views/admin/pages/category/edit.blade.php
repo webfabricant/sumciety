@@ -1,4 +1,4 @@
-@extends('artist.index')
+@extends('admin.index')
 @section('content')
 
     <div class="container-fluid">
@@ -8,22 +8,21 @@
             <div class="col-lg-6">
                 <div class="card m-b-20">
                     <div class="card-body">
-                        <h4 class="mt-0 header-title">Add New Sub category</h4>
+                        <h4 class="mt-0 header-title">Main category Edit</h4>
                         <br>
-                        <form method="post" class="" action="{{route('subcategory.store')}}" enctype="multipart/form-data">
+                        <form  class="" action="{{route('category.update', $category->id)}}" enctype="multipart/form-data" method="POST">
                             @csrf
+                            @method('PUT')
                             <div class="form-group">
-                                <label>Main Category *</label>
-                                 <select class="browser-default custom-select" name="category_id">
-                                    <option selected>Select Category</option>
-                                    @foreach($categories as $data)
-                                    <option value="{{$data->id}}">{{$data->name}}</option>
-                                    @endforeach
-                                </select>
+                                <label>Name *</label>
+                                <input type="text" class="form-control" name="name" value="{{$category->name}}" required placeholder="Enter Category Name"/>
                             </div>
                             <div class="form-group">
-                                <label>Sub Category Name *</label>
-                                <input type="text" class="form-control" name="name" required placeholder="Enter Sub Category Name"/>
+                                <label>Image *</label>
+                                <div>
+                                    <input type="file" name="image" id="pass2"  required
+                                           placeholder="Password"/>
+                                </div>
                             </div>
                             <br>
                             <div class="form-group">

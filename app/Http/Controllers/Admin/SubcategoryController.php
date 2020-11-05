@@ -17,7 +17,7 @@ class SubcategoryController extends Controller
     public function index()
     {
         $category = Subcategory::latest()->get();
-        return view('artist.pages.subcategory.index', compact('category'));
+        return view('admin.pages.subcategory.index', compact('category'));
 
     }
 
@@ -29,7 +29,7 @@ class SubcategoryController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('artist.pages.subcategory.create', compact('categories'));
+        return view('admin.pages.subcategory.create', compact('categories'));
     }
 
     /**
@@ -73,7 +73,7 @@ class SubcategoryController extends Controller
     {
         $subcategory = Subcategory::find($id);
         $category = Category::all();
-        return view('artist.pages.subcategory.edit', compact('subcategory', 'category'));
+        return view('admin.pages.subcategory.edit', compact('subcategory', 'category'));
     }
 
     /**

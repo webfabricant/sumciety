@@ -17,7 +17,7 @@ class CategoryController extends Controller
     public function index()
     {
         $category = Category::latest()->get();
-        return view('artist.pages.category.categories', compact('category'));
+        return view('admin.pages.category.categories', compact('category'));
 
     }
 
@@ -28,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('artist.pages.category.create');
+        return view('admin.pages.category.create');
     }
 
     /**
@@ -80,7 +80,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
-        return view('artist.pages.category.edit', compact('category'));
+        return view('admin.pages.category.edit', compact('category'));
     }
 
     /**
